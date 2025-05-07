@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/foods/food-index.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>All Foods</h1>
+</section>
+
+<section class="card-container">
+  {% for food in food_list %}
+    <div class="card">
+      <div class="card-bg"></div>
+      <a href="{% url 'food-detail' food.id %}">
+        <div class="card-content">
+          <p>Food Logo (image) </p>
+          <h2>{{ food.name }}</h2>
+          <p>{{ food.grams }} grams</p>
+          <p>{{ food.calories }} calories</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/foods/food-detail.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<div class="card">
+  <div class="card-bg"></div>
+  <div class="card-content">
+    <h2>{{ food.name }}</h2>
+    <p>{{ food.grams }} g</p>
+    <p>{{ food.calories }} cal</p>
+  </div>
+</div>
+<a href="{% url 'food-update' food.id %}" class="btn warn">Edit</a>
+<a href="{% url 'food-delete' food.id %}" class="btn danger">Delete</a>
+
+{% endblock %}

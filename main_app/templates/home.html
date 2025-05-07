@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="logo-container">
+  <div class="cat-container">
+    <img src="{% static 'images/logo.svg' %}" alt="The circle logo" />
+  </div>
+  <img src="{% static 'images/logo01.svg' %}" alt="Text reads: TheZranos" />
+</section>
+
+<!--Login Form-->
+{% if not user.is_authenticated %}
+  <section>
+    <form action="{% url 'home' %}" method="post" class="login">
+      <h1>Login</h1>
+      {% csrf_token %} {{ form.as_p }}
+      <input type="hidden" name="next" value="{{ next }}" />
+      <button type="submit" class="btn submit">Login</button>
+    </form>
+  </section>
+{% endif %}
+
+{% endblock %}

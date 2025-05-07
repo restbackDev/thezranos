@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="19.47 16.618 132.24 28.265" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Press Start 2P">@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+  </defs>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="476.117" y="63.597"> </text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="433.459" y="65.618"> </text>
+  <text style="fill: rgb(51, 51, 51); font-family: &quot;Press Start 2P&quot;; font-size: 13px; white-space: pre;" transform="matrix(1.014878, 0, 0, 1, -0.291319, 0)" x="19.58" y="41.515">theZran  s</text>
+  <ellipse style="paint-order: stroke; stroke: rgb(148, 159, 255); fill: rgb(26, 52, 216);" cx="124.374" cy="30.693" rx="12.049" ry="12.083"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 120.932 25.168 C 120.683 26.462 120.529 27.6 120.529 28.914"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 126.98 25.655 C 126.98 27.418 126.321 29.124 126.321 30.513"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 130.244 32.564 C 128.741 35.828 124.452 41.092 120.167 37.939 C 118.738 36.888 119.234 35.125 118.254 34.145"/>
+</svg>

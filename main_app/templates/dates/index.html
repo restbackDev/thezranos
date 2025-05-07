@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/dates/date-index.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <h1>Date List</h1>
+  {% comment %}
+  <img
+    src="{% static 'images/cool-dates.svg' %}"
+    alt="A cool dates"
+  />
+  <img
+    src="{% static 'images/happy-dates.svg' %}"
+    alt="A happy dates"
+  />
+  <img
+    src="{% static 'images/teacup-dates.svg' %}"
+    alt="A dates in a teacup"
+  />
+  <img
+    src="{% static 'images/dates-in-box.svg' %}"
+    alt="A dates in a box"
+  /> {% endcomment %}
+</section>
+
+<section class="card-container">
+  {% for date in dates %}
+  <div class="card">
+
+    <a href="{% url 'date-detail' date.id %}">
+    <div class="card-content">
+      <div class="card-img-container">
+          <h1>Date-Logo (Image)</h1>
+      </div>
+      <h2 class="card-title">{{ date.day }}</h2>
+      <h3>Protein Goal: g/{{date.protein_per_weight}}g</h3>
+
+      {% if date.water_intake > 0 %}
+      <p>You drank: {{date.water_intake}}</p>
+      {% else %}
+      <p>You drank: 0</p>
+      {% endif %}
+      <p>Weight: {{date.weight}}lbs</p>
+    </div>
+    </a>
+
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

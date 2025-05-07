@@ -1,0 +1,100 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/dates/date-detail.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<section class="date-container">
+  <div class="date-img">
+    {% comment %} <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" /> {% endcomment %}
+    <h1>Photo Logo (image)</h1>
+  </div>
+  <div class="date-details">
+    <h2>{{ date.day }}</h2>
+    <h2>Protein Goal:  {{date.total_protein}} g/{{date.protein_per_weight}}g</h2>
+    {% if date.water_intake > 0 %}
+      <h3>You drank: {{date.water_intake}} 🥛</h3>
+    {% else %}
+      <h3>You drank: 0</h3>
+    {% endif %}
+      <h3>Weight: {{date.weight}}lbs</h3>
+  </div>
+
+  <div>
+    <a href="{% url 'date-update' date.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'date-delete' date.id %}" class="btn danger">Delete</a>
+  </div>
+
+
+</section>
+
+<!-- TEST-->
+<section class="toys">
+  <div class="subsection-title">
+    <h2>Foods</h2>
+  </div>
+
+  <!-- displaying a date's foods -->
+  <h3>Food Aquired:</h3>
+  <div class="subsection-content">
+    {% if date.foods.count %} 
+      {% for food in date.foods.all %}
+        <div class="food-container">
+          <div class="color-block" style="background-color: {{ food.color }}"></div>
+          <a href="{% url 'food-detail' food.id %}">
+            <p>{{ food.name }} {{food.grams}}g</p>
+          </a>
+
+          <!--remove toy form-->
+          <form action="{% url 'remove-food' date.id food.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Remove Food</button>
+          </form>
+
+        </div>
+      {% endfor %} 
+    {% else %}
+      <p class="no-foods">No food eaten today</p>
+    {% endif %}
+  </div>
+
+  <h3>Available foods</h3>
+  <div class="subsection-content">
+    <!-- Available foods here -->
+  </div>
+</section>
+<!-- TEST-->
+
+
+
+
+<!-- Food Section-->
+<section class="">
+  <div class="">
+    <h2>Foods</h2>
+  </div>
+  <h3>Available Foods</h3>
+  <div class="">
+    {% if foods.count %} 
+
+    {% for food in foods %}
+      <div class="">
+        <div class="color-block"></div>
+        <p>{{ food.name }} {{ food.grams }}</p>
+        <form action="{% url 'associate-food' date.id food.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn submit">Add Food</button>
+        </form>
+      </div>
+    {% endfor %}
+
+    {% else %}
+    <p class="all-toys">{{cat.name}} already has all the available Foods 🥳</p>
+    {% endif %}
+  </div>
+</section>
+
+
+{% endblock %}
