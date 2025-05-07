@@ -1,3 +1,4 @@
+![Rotten Oranges Logo](/main_app/static/images/imagescreen.png)
 # 🥩 Thezranos: Daily Protein Tracker
 
 App link: https://thezranos-f0badb329bf2.herokuapp.com/
